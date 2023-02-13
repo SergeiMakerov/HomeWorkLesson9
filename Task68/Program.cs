@@ -10,9 +10,9 @@ Console.Write("Введите число m: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число n: ");
 int n = Convert.ToInt32(Console.ReadLine());
-Console.Write("A(m,n) = " + Akkerman(m, n));
+Console.Write("A(m,n) = " + GetFunctionAkkerman(m, n));
 
-int Akkerman(int m, int n)
+int GetFunctionAkkerman(int m, int n)
 {
     if (m == 0)
     {
@@ -20,10 +20,10 @@ int Akkerman(int m, int n)
     }
     else if (n == 0 && m > 0)
     {
-        return Akkerman(m - 1, 1);
+        return GetFunctionAkkerman(m - 1, 1);
     }
     else
     {
-        return (Akkerman(m - 1, Akkerman(m, n - 1)));
+        return (GetFunctionAkkerman(m - 1, GetFunctionAkkerman(m, n - 1)));
     }
 }
