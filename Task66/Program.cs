@@ -10,9 +10,9 @@ Console.Write("Введите число M: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число N: ");
 int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(GapSum(m - 1, n));
+Console.WriteLine(GetSumOfGap(m - 1, n));
 
-int GapSum(int m, int n)
+int GetSumOfGap(int m, int n)
 {
     int res = m;
     if (m == n)
@@ -20,7 +20,7 @@ int GapSum(int m, int n)
     else
     {
         m++;
-        res = m + GapSum(m, n);
+        res = m + GetSumOfGap(m, n);
         return res;
     }
 }
