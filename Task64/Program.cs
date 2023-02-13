@@ -10,13 +10,13 @@ N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 Console.Write("Введите число N: ");
 int number = Convert.ToInt32(Console.ReadLine());
 int count = 1;
-Console.WriteLine(PrintNambers(number, count));
+Console.WriteLine(GetOutputOfNumbers(number, count));
 
-string PrintNambers(int number, int count)
+string GetOutputOfNumbers(int number, int count)
 {
     if (count == number)
     {
         return number.ToString();
     }
-    return (number + " " + PrintNambers(number - 1, count));
+    return (number + " " + GetOutputOfNumbers(number - 1, count));
 }
